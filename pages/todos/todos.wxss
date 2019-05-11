@@ -1,0 +1,53 @@
+/* pages/todos/todos.wxss */
+.container{
+    border-top:1px solid #e0e0e0;
+}
+.header {
+    border:2rpx solid #e0e0e0;
+    border-radius: 10rpx;
+    margin:20rpx;
+    box-shadow: 0 0 5rpx #e0e0e0;
+    display: flex;
+    padding:20rpx;
+    align-items: center;
+}
+.header image{
+    width:40rpx;
+    height:40rpx;
+    margin-right:20rpx;
+}
+.header input{
+    flex:1;
+}
+.todos{
+    border:2rpx solid #e0e0e0;
+    border-radius: 10rpx;
+    margin:20rpx;
+    box-shadow: 0 0 5rpx #e0e0e0;
+}
+.todos .item{   
+    padding:20rpx;
+    border-bottom:1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+.todos .item:last-child{
+    border:0;
+}
+.todos .item text{
+    flex:1;
+    font-size: 30rpx;
+    margin-left:20rpx;
+    color:#444;
+}
+.todos .item.completed text{
+    text-decoration: line-through;
+    color:#888;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin:20rpx;
+    font-size:30rpx;
+    color:#444;
+}

@@ -1,0 +1,30 @@
+<!--pages/todos/todos.wxml-->
+<view class="container">
+    <!-- search部分 -->
+    <view class="header">
+        <image src="../../images/plus.png" bindtap="changehandle"></image>
+        <input type="text" placeholder="Anything Here..." value="{{add}}" bindinput="addtodohandle"
+            bindconfirm="changehandle" />
+    </view>
+    <block wx:if="{{todos.length}}">
+        <!-- 列表部分 -->
+        <view class="todos">
+            <view class="item{{item.completed ? ' completed' : ''}}" wx:for="{{todos}}" wx:key="{{index}}" data-index="{{index}}"
+                bindtap="toggletodoshandle">
+                <icon type="{{item.completed ? 'success' : 'warn'}}" size="20" />
+                <text>{{item.name}}</text>
+                <icon type="clear" size="15" catchtap="removehandle" />
+            </view>
+
+        </view>
+        <!-- 底部 -->
+        <view class="footer">
+            <text bindtap="changeallhandle">Toggle all</text>
+            <text wx:if="{{leftCount}}">{{leftCount}}{{leftCount > 1 ? ' items' :' item'}} lift</text>
+            <text bindtap="clearhandle">clear completed</text>
+        </view>
+    </block>
+    <view wx:else>
+        <text>null</text>
+    </view>
+</view>
